@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>13城市天气</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <!--如果有错误，显示404，点击时重新加载数据-->
+    <div *ngIf="hasErr">
+        <div class="loading" (click)="initData()">
+            <img src="assets/img/404.png" style="width:50%">
+        </div>
+    </div>
+
+    <!--如果没有错误，显示该DOM-->
+    <div *ngIf="!hasErr">
+        <!--如果没完成加载，显示正在加载中-->
+        <div *ngIf="!dataFinish" class="loading">
+            <ion-spinner name="bubbles"></ion-spinner>
+        </div>
+        <!--如果已经完成加载，显示该DOM-->
+        <div *ngIf="dataFinish">
+            <!--搜索城市-->
+            <city-search></city-search>
+
+            <ion-list>
+              <ion-item *ngFor="let city of cities" (click)="PushCurrentWeather(city.name)">
+                {{city.name}}
+                <!--删除选中的城市-->
+                <button  class="delete" ion-button icon-only (click)="delete(city); $event.stopPropagation()">
+                  <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+                </button>
+
+              </ion-item>  
+            </ion-list>
+            <!--添加城市-->
+            <div>
+              <ion-list>
+                <ion-item>
+                  <ion-label floating>城市名称：</ion-label>
+                  <ion-input type="text" #cityName></ion-input>
+                </ion-item>
+              </ion-list>
+              <button ion-button full  (click)="add(cityName.value); cityName.value=''">添加</button>
+            </div>
+        </div>
+    </div>
+</ion-content>

@@ -1,0 +1,17 @@
+{
+    "desc":"OK",
+    "status":1000,
+    "data":{"wendu":"3",
+            "ganmao":"昼夜温差较大，较易发生感冒，请适当增减衣服。体质较弱的朋友请注意防护。",
+            "forecast":[
+                {"fengxiang":"无持续风向","fengli":"微风级","high":"高温 13℃","type":"晴","low":"低温 1℃","date":"23日星期一"},
+                {"fengxiang":"无持续风向","fengli":"微风级","high":"高温 11℃","type":"多云","low":"低温 2℃","date":"24日星期二"},
+                {"fengxiang":"无持续风向","fengli":"微风级","high":"高温 13℃","type":"多云","low":"低温 2℃","date":"25日星期三"},
+                {"fengxiang":"无持续风向","fengli":"微风级","high":"高温 14℃","type":"多云","low":"低温 3℃","date":"26日星期四"},
+                {"fengxiang":"无持续风向","fengli":"微风级","high":"高温 12℃","type":"多云","low":"低温 4℃","date":"27日星期五"}
+                ],
+            "yesterday":{"fl":"微风","fx":"无持续风向","high":"高温 11℃","type":"晴","low":"低温 -2℃","date":"22日星期日"},
+            "aqi":"83",
+            "city":"武汉"
+            }
+}
